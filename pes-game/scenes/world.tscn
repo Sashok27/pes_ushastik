@@ -2,29 +2,40 @@
 
 [ext_resource type="Texture2D" uid="uid://dcdoaqwc2t7bw" path="res://assets/grass_anim1.png" id="1_4wyf3"]
 [ext_resource type="Script" uid="uid://dsww3dect7ist" path="res://script/DogMovement.cs" id="2_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://deuum56sadnt2" path="res://assets/tree1.png" id="2_k0juu"]
 [ext_resource type="Texture2D" uid="uid://kkbtkxop5hkx" path="res://assets/my_pes_an.png" id="2_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://duxmd0s2npcuk" path="res://assets/home_fisher.png" id="3_71j4m"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w7kh3"]
-atlas = ExtResource("1_4wyf3")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
+texture = ExtResource("1_4wyf3")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 2
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e3hyu"]
-atlas = ExtResource("1_4wyf3")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
+texture = ExtResource("2_k0juu")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 2
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.031607, -2.6115494, -1.1969604, 8.052275, 5.331911, 3.0468063, 9.249235, -9.35805, -5.76717, -10.881454)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4wyf3"]
-animations = [{
-"frames": [{
-"duration": 2.5,
-"texture": SubResource("AtlasTexture_w7kh3")
-}, {
-"duration": 2.5,
-"texture": SubResource("AtlasTexture_e3hyu")
-}],
-"loop": true,
-"name": &"wind",
-"speed": 5.0
-}]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
+texture = ExtResource("3_71j4m")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.202429, 12.404856, 12.731298, 9.793306, 13.384188, -11.534341, 5.767172, -13.928261, -5.76717, -10.881454, -12.51367, -5.0054693, -14.037075, 9.575678)
+
+[sub_resource type="TileSet" id="TileSet_k0juu"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/5 = SubResource("TileSetAtlasSource_71j4m")
+sources/6 = SubResource("TileSetAtlasSource_qfnet")
+sources/3 = SubResource("TileSetAtlasSource_4wyf3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wyf3"]
 atlas = ExtResource("2_rwgxs")
@@ -89,18 +100,26 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
-size = Vector2(115, 142)
+size = Vector2(72, 118)
 
 [node name="world" type="Node2D" unique_id=1088023544]
 
-[node name="Grass" type="AnimatedSprite2D" parent="." unique_id=495178743]
+[node name="GroundTileMap" type="TileMap" parent="." unique_id=1454594484]
 texture_filter = 1
-position = Vector2(149.79349, 131.25)
-scale = Vector2(9.575407, 8.359375)
-sprite_frames = SubResource("SpriteFrames_4wyf3")
-animation = &"wind"
+scale = Vector2(7.94, 7.94)
+tile_set = SubResource("TileSet_k0juu")
+format = 2
+layer_0/name = "Grass"
+layer_0/tile_data = PackedInt32Array(327682, 3, 0, 327683, 3, 0, 327684, 3, 0, -1, 3, 0, 0, 3, 0, 65536, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 65539, 3, 0, 3, 3, 0, -65534, 3, 0, -65535, 3, 0, -65536, 3, 0, 65535, 3, 0, 131071, 3, 0, 65537, 3, 0, 1, 3, 0, 65538, 3, 0, 2, 3, 0, 196607, 3, 0, 196606, 3, 0, 131070, 3, 0, 65534, 3, 0, -2, 3, 0, -65538, 3, 0, -65533, 3, 0, 4, 3, 0, 65540, 3, 0, 131076, 3, 0, -131071, 3, 0, -131072, 3, 0, -65537, 3, 0, -65532, 3, 0, -131070, 3, 0, 65541, 3, 0, 131077, 3, 0, 5, 3, 0, 131078, 3, 0, 196614, 3, 0, 262150, 3, 0, 196613, 3, 0, 196612, 3, 0, 196611, 3, 0, 196610, 3, 0, 196609, 3, 0, 196608, 3, 0, 262143, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 65542, 3, 0, 196615, 3, 0, 262151, 3, 0)
+layer_1/name = "Plants"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(0, 5, 0, -65535, 5, 0, 131072, 5, 0, 131073, 5, 0, 65539, 5, 0, -65533, 5, 0, 4, 5, 0, 131074, 5, 0, 65538, 5, 0)
+layer_2/name = "House"
+layer_2/z_index = 2
+layer_2/tile_data = PackedInt32Array(2, 6, 0)
 
 [node name="Dog" type="CharacterBody2D" parent="." unique_id=953286740]
+position = Vector2(100, 0)
 script = ExtResource("2_4wyf3")
 
 [node name="DogAnimation" type="AnimatedSprite2D" parent="Dog" unique_id=1757665527]
@@ -111,5 +130,5 @@ sprite_frames = SubResource("SpriteFrames_71j4m")
 animation = &"go_forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dog" unique_id=2141526893]
-position = Vector2(191.5, 160)
+position = Vector2(201, 158)
 shape = SubResource("RectangleShape2D_4wyf3")

@@ -1,22 +1,51 @@
 [gd_scene format=3 uid="uid://cs2c0smucw1np"]
 
 [ext_resource type="Script" uid="uid://c3mnk5ekfcd0" path="res://script/StartMenu.cs" id="1_qg2pr"]
+[ext_resource type="Texture2D" uid="uid://dmhvkotgx8opq" path="res://assets/fon_start_menu.jpeg" id="2_geuql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iionx"]
+bg_color = Color(0.73506325, 0.24557132, 0.25668147, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.5051489, 0.1498501, 0.15801263, 1)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geuql"]
+bg_color = Color(0.3764706, 0.41568628, 0.42352942, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Control" type="Control" unique_id=1431128013]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 200.0
-offset_top = 161.0
-offset_right = 240.0
-offset_bottom = 201.0
+offset_left = 81.0
+offset_top = 97.0
+offset_right = 387.0
+offset_bottom = 229.0
 script = ExtResource("1_qg2pr")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160123546]
+position = Vector2(496, 230)
+scale = Vector2(1.1289063, 0.64501953)
+texture = ExtResource("2_geuql")
+
 [node name="StartButton" type="Button" parent="." unique_id=760890134]
+texture_filter = 1
 layout_mode = 0
-offset_left = 111.0
-offset_top = 115.0
-offset_right = 500.0
-offset_bottom = 243.0
+offset_left = 336.0
+offset_top = 246.0
+offset_right = 653.0
+offset_bottom = 364.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_iionx")
+text = "Играть"
 
 [node name="Label" type="Label" parent="." unique_id=1010838095]
 layout_mode = 1
@@ -25,7 +54,11 @@ anchor_left = 1.7750001
 anchor_top = -0.837
 anchor_right = 1.7750001
 anchor_bottom = -0.837
-offset_left = 162.0
-offset_top = -68.520004
-offset_right = 438.0
-offset_bottom = 68.479996
+offset_left = -459.15002
+offset_top = 84.484
+offset_right = 408.84998
+offset_bottom = 181.48401
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_geuql")
+text = "Шарик делает грязь"
+horizontal_alignment = 1
