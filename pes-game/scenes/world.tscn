@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b8wwa4vifjufg"]
+
+[ext_resource type="Texture2D" uid="uid://dcdoaqwc2t7bw" path="res://assets/grass_anim1.png" id="1_4wyf3"]
+[ext_resource type="Script" uid="uid://dsww3dect7ist" path="res://script/DogMovement.cs" id="2_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://kkbtkxop5hkx" path="res://assets/my_pes_an.png" id="2_rwgxs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7kh3"]
+atlas = ExtResource("1_4wyf3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3hyu"]
+atlas = ExtResource("1_4wyf3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wyf3"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_w7kh3")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_e3hyu")
+}],
+"loop": true,
+"name": &"wind",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wyf3"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71j4m"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfnet"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7141"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mrxx"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r4gi"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0juu"]
+atlas = ExtResource("2_rwgxs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71j4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wyf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71j4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfnet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7141")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mrxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r4gi")
+}],
+"loop": true,
+"name": &"go_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0juu")
+}],
+"loop": true,
+"name": &"stoim",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
+size = Vector2(115, 142)
+
+[node name="world" type="Node2D" unique_id=1088023544]
+
+[node name="Grass" type="AnimatedSprite2D" parent="." unique_id=495178743]
+texture_filter = 1
+position = Vector2(149.79349, 131.25)
+scale = Vector2(9.575407, 8.359375)
+sprite_frames = SubResource("SpriteFrames_4wyf3")
+animation = &"wind"
+
+[node name="Dog" type="CharacterBody2D" parent="." unique_id=953286740]
+script = ExtResource("2_4wyf3")
+
+[node name="DogAnimation" type="AnimatedSprite2D" parent="Dog" unique_id=1757665527]
+texture_filter = 1
+position = Vector2(212, 160)
+scale = Vector2(5.1718745, 4.8125)
+sprite_frames = SubResource("SpriteFrames_71j4m")
+animation = &"go_forward"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dog" unique_id=2141526893]
+position = Vector2(191.5, 160)
+shape = SubResource("RectangleShape2D_4wyf3")
