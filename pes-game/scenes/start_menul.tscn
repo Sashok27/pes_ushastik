@@ -15,6 +15,25 @@ corner_radius_top_right = 70
 corner_radius_bottom_right = 70
 corner_radius_bottom_left = 70
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t1vx"]
+bg_color = Color(0.5058824, 0.14901961, 0.15686275, 1)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y27cy"]
+bg_color = Color(0.73333335, 0.24705882, 0.25490198, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.5058824, 0.14901961, 0.15686275, 1)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geuql"]
 bg_color = Color(0.3764706, 0.41568628, 0.42352942, 1)
 corner_radius_top_left = 20
@@ -31,7 +50,7 @@ offset_right = 387.0
 offset_bottom = 229.0
 script = ExtResource("1_qg2pr")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160123546]
+[node name="Fon_Start" type="Sprite2D" parent="." unique_id=1160123546]
 position = Vector2(496, 230)
 scale = Vector2(1.1289063, 0.64501953)
 texture = ExtResource("2_geuql")
@@ -45,6 +64,8 @@ offset_right = 653.0
 offset_bottom = 364.0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_iionx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7t1vx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y27cy")
 text = "Играть"
 
 [node name="Label" type="Label" parent="." unique_id=1010838095]
